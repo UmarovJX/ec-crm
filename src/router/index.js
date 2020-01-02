@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 //-----------------------------------------
-import Calendar from "../views/Calendar.vue";
-import Rooms from "../views/Rooms.vue";
+//import Calendar from "../views/Calendar.vue";
+//import Rooms from "../views/Rooms.vue";
 import Teachers from "../views/Teachers.vue";
 import Groups from "../views/Groups.vue";
 //-GROUPS-----------------------------------------------
@@ -20,6 +20,22 @@ const routes = [
     path: '/',
     name: 'home',
     redirect: '/groups'
+  },
+  {
+    path: '/teachers',
+    title: 'Teachers',
+    component: Teachers,
+    icon: 'mdi-account-tie',
+    children: [{
+      path: '',
+      name: 'teachers',
+      component: TeachersTable,
+    },
+    {
+      path: 'teacher-from',
+      name: 'teacher-form',
+      component: TeacherForm,
+    }]
   },
   {
     path: '/groups',
@@ -44,8 +60,8 @@ const routes = [
     ]
   },
   {
-    path: '/teachers',
-    title: 'Teachers',
+    path: '/students',
+    title: 'Students',
     component: Teachers,
     icon: 'mdi-school',
     children: [{
@@ -59,20 +75,21 @@ const routes = [
       component: TeacherForm,
     }]
   },
-  {
-    path: '/rooms',
-    name: 'rooms',
-    title: 'Rooms',
-    component: Rooms,
-    icon: 'mdi-door',
-  },
-  {
-    path: '/calendar',
-    name: 'calendar',
-    title: 'Calendar',
-    component: Calendar,
-    icon: 'mdi-timetable',
-  },
+
+  // {
+  //   path: '/rooms',
+  //   name: 'rooms',
+  //   title: 'Rooms',
+  //   component: Rooms,
+  //   icon: 'mdi-door',
+  // },
+  // {
+  //   path: '/calendar',
+  //   name: 'calendar',
+  //   title: 'Calendar',
+  //   component: Calendar,
+  //   icon: 'mdi-timetable',
+  // },
   {
     path: '/about',
     name: 'about',

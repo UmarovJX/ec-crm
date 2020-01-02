@@ -1,7 +1,7 @@
 <template>
   <v-navigation-drawer :clipped="$vuetify.breakpoint.lgAndUp" app class="teal darken-2">
     <v-list class="pa-0">
-      <v-list-item-group v-model="selected" mandatory>
+      <v-list-item-group mandatory>
         <v-list-item
           :to="route.path"
           dark
@@ -31,10 +31,7 @@ export default {
     }
   },
   data() {
-    return {
-      selected: 0,
-      class: ""
-    };
+    return {};
   },
   watch: {
     selected() {
