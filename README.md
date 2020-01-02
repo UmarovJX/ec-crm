@@ -1,5 +1,6 @@
 # ec-crm
-
+### Educational center CRM
+#### Pet project with vue.js
 ## Project setup
 ```
 npm install
